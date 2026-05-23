@@ -1,0 +1,10 @@
+How to test if it works right now
+You don't need a massive memory dump to test this. You can create a fake, tiny file to see the engine in action.
+
+Create a text file with some dummy data and hide one of your strings inside it:
+echo "Just some normal text... wait, sliverpb is here" > test_target.txt
+
+Run the YARA engine against that file:
+yara detect_sliver.yar test_target.txt
+
+If you wrote the rule correctly, your terminal will spit back Sliver_Ubuntu_Implant test_target.txt, confirming it caught the malware artifact!
